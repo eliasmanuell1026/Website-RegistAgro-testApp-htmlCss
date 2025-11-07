@@ -11,7 +11,7 @@
   --muted: #cfd7df;
   --text: #ffffff;
   --danger: #e03b3b;
-  --radius-lg: 12px;
+  --radius-lg: 12mainx;
   --container: 1160px;
 }
 
@@ -82,16 +82,18 @@ body{
   align-items:flex-start;
   justify-content:space-between;
   margin-bottom:28px;
+  
 }
-.panel-left{flex:1;min-width:260px}
+.panel-left{flex:1;max-width:460px}
 .panel-left h2{font-size:20px;margin-bottom:6px}
 .muted{color:var(--muted)}
 .small{font-size:13px}
 .actions{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
 .ghost{background:var(--white-10);border:0;padding:10px 12px;border-radius:8px;color:var(--text);cursor:pointer}
 .ghost:hover{background:rgba(255,255,255,0.18)}
+
 .panel-right{
-  width:260px;
+  min-width: 290px;  
   background:var(--white-5);
   padding:14px;border-radius:12px;
 }
@@ -100,14 +102,15 @@ body{
   gap:12px;
   align-items:center;
   justify-content:space-between;
+  flex-direction: column;
   margin-bottom:20px;
 }
 .search-wrap{flex:1;display:flex;gap:12px;align-items:center}
 .search{
   flex:1;padding:10px 14px;border-radius:10px;background:var(--white-10);border:0;color:var(--text);
 }
-.select{padding:10px 12px;border-radius:10px;background:var(--gray-800);color:var(--text);border:0}
-.filter-actions{display:flex;gap:8px}
+.select{padding:8px 10px;border-radius:10px;background:var(--gray-800);color:var(--text);border:0}
+.filter-actions{display:flex;gap:8px;justify-content: left;}
 .primary{background:var(--cyan-600);border:0;padding:10px 14px;border-radius:10px;color:#fff;cursor:pointer}
 .primary:hover{background:var(--cyan-500)}
 .cards{
@@ -159,41 +162,85 @@ body{
 }
 .details{display:none;margin-top:12px;color:var(--muted);font-size:14px;transition:all .15s ease}
 .site-footer{
-  display:flex;align-items:stretch;
-  gap:0;margin:20px 0 0 0;height:80px;border-radius:40px 0 0 40px;overflow:hidden;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  align-items:stretch;
+  gap:0;
+  margin:20px 0 0 0;
+  height:40px;
+  border-radius:40px 0 0 40px;
+  overflow:hidden;
 }
-.wa{background:rgba(6,122,140,1);display:flex;align-items:center;padding:12px 18px}
-.icon{width:34px;height:40px;color:#fff}
-.icon.small{width:28px;height:32px}
+.wa{
+    background:rgba(6,122,140,1);
+    display:flex;
+    align-items:center;
+    padding:12px 18px
+    
+}
+.icon{width:30px;height:30px;color:#fff}
+.icon.small{width:18px;height:22px}
 .footer-stripes{display:flex;flex:1;height:100%}
 .stripe{display:flex;align-items:center}
-.stripe-1{background:rgba(6,100,120,1);padding:0 18px;width:160px;justify-content:center}
-.stripe-2{background:rgba(4,63,78,1);flex:1;display:flex;align-items:center;padding-left:18px}
-.stripe-inner{display:flex;align-items:center;gap:18px;width:100%}
-.copyright{color:#fff;font-weight:700;font-size:14px}
+.stripe-1{
+    background:rgba(6,100,120,1);
+    padding:0 18px;
+    width:160px;
+    justify-content:center
+}
+.stripe-2{
+    background:rgba(4,63,78,1);
+    flex:1;
+    display:flex;
+    align-items:center;
+    padding-left:18px
+}
+.stripe-inner{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    width:50%
+}
+.copyright{color:#fff;font-weight:700;font-size:11px}
 @media(max-width:1440px){.container{padding:0 16px}}
 @media(max-width:1024px){
   .nav{display:none}
   .hamburger{display:flex}
   .panel{flex-direction:column;align-items:stretch}
-  .panel-right{width:100%}
+  .panel-right{width:150%}
 }
 @media(max-width:768px){
   .panel{flex-direction:column;align-items:stretch}
-  .panel-right{width:100%}
+  .panel-right{width:50%}
 }
 @media(max-width:640px){
-  .search, .select, .filter-actions button{width:100%}
-  .filter-actions{flex-direction:column;gap:8px}
-  .actions{flex-direction:column}
   .site-footer{
     flex-direction:column;
     height:auto;
     border-radius:0;
   }
-  .wa, .footer-stripes{width:100%;justify-content:center;padding:12px}
-  .stripe-1, .stripe-2{width:100%;flex-direction:row;justify-content:center;padding:8px 0}
-  .stripe-inner{flex-direction:column;gap:6px;align-items:center}
+  .wa{
+    width:100%;
+    justify-content:center;
+    padding:12px 0
+  }
+  .wa a{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 30px;
+    margin: 0px 20px;
+  }
+  .stripe-1, .stripe-2{
+    width:100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction:row;
+    justify-content:center;
+    padding:12px 0}
+
 }
 #mainNav.mobile{
   display:flex;
